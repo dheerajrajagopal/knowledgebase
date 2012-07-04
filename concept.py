@@ -2,7 +2,7 @@
 
 import sqlite3 
 
-con = sqlite3.connect('knowlegebase.db')
+con = sqlite3.connect('master_knowledgebase.db')
 cur = con.cursor()
 
 class Concept:
@@ -15,7 +15,7 @@ class Concept:
 		print self.concept1
 		concept1_tuple = cur.execute("select id from concept_concept1 where concept_name = :concept_name", {"concept_name":self.concept1} )
 		for i in concept1_tuple:
-			concept1_id = i[0] - 1
+			concept1_id = i[0] 
 		
 		print concept1_id
 		
@@ -57,7 +57,7 @@ class Concept:
 		return conc1
 
 
-
+'''
 k = Concept("plate")
 
 l = k.select_concept2()
@@ -71,4 +71,4 @@ print m
 
 
 cur.close()
-
+'''
